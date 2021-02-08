@@ -1,41 +1,30 @@
 function myFunction() {
-    let num1 = 0;
-    let num2 = 0;
-    let addTotal = 0;
-    let subTotal = 0;
-    let multiplicationTotal = 0;
-    let divisionTotal = 0;
-    let moduloTotal = 0;
-    let message = "";
-    num1 = document.getElementById("txtNum1").value;
-    num2 = document.getElementById("txtNum2").value;
 
-    if (num1=='') {
-        alert('Please enter first number!')
-    }
-    else if (num2=='') {
-        alert('Please enter second number!')
-    }
-    else 
-    {
-        addTotal = Number(num1) + Number(num2)
-        subTotal = Number(num1) - Number(num2)
-        multiTotal = Number(num1) * Number(num2)
-        div = Number(num1) / Number(num2)
-        moduloTotal = Number(num1) % Number(num2)
+    let password = '';
+    let correctPassword = '';
 
-        message = num1 + ' + '  + num2 + ' = ' + addTotal + '<br />' 
-                + num1 + ' - '  + num2 + ' = ' + subTotal + '<br />'
-                + num1 + ' * '  + num2 + ' = ' + multiTotal + '<br />'
-                + num1 + ' / '  + num2 + ' = ' + div + '<br />' 
-                + num1 + ' % '  + num2 + ' = ' + moduloTotal + '<br />'
+    password = prompt('Please enter your password', password)
+    correctPassword = 'secret';
 
-        document.getElementById("lblMessage").innerHTML  =  message;
-    }
+    let i;
+    for (i = 1; i < 4; i++) {
+        if (password !=correctPassword)  {
+            prompt('Invalid password. Please enter correct password!', password)
+
+        }
+        else if (i==3) {
+            alert('Your account is locked!  You failed to enter the correct password after ' + i + ' times(s).');
+        }
+        else if (password ==correctPassword) {
+      
+            alert('You entered the correct password after ' + i + ' attempt(s).');
+            i = 3;
+        } 
+      }
+
+    
+
+
 }
 
-function clearValues() {
-    document.getElementById("txtNum1").value  = '';
-    document.getElementById("txtNum2").value  = '';
-    document.getElementById("lblMessage").innerHTML  = '';
-}
+
