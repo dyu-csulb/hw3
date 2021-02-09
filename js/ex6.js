@@ -30,7 +30,9 @@ function myFunction() {
         document.getElementById("minutes").value  = 0;
         document.getElementById("hours").value  = 0;
     }
-
+    else if (seconds<59 && minutes == 59 && hours == 12) {
+        document.getElementById("seconds").value  = Number(seconds) + 1;
+    }
 
 }
 
